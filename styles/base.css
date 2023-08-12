@@ -15,17 +15,19 @@
 
 
 	--theme-blue: hsl(209, 100%, 22%);
-	--theme-blue-darker: hsl(209, 100%, 16%);
-
+	--theme-blue-darker: hsl(209, 100%, 14%);
 
 	--theme-cyan: hsl(205, 72%, 66%);
+
 	--theme-black: hsl(210, 33%, 9%);
+	--theme-black-lighter: hsl(210, 33%, 14%);
+
+
 	--theme-white: hsl(0, 0%, 100%); /* redundant but oh well */
 
-	/* font-size: calc(1vh + 0.5vw); */
-
 	color: var(--text-color);
-	font: 1em Roboto;
+	/* bs formula i made up */
+	font: max(16px, calc(0.8vh + 0.3vw)) Roboto;
 }
 
 
@@ -38,10 +40,10 @@
 
 
 body {
-	background-color: var(--background-color);
+	background-color: var(--theme-black);
 	margin: 0;
 
 	height: 100vh;
-	padding: 1rem;
+	padding: 2rem;
 	box-sizing: border-box;
 }

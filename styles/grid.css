@@ -10,6 +10,8 @@
 
 .card {
 	display: inline-flex;
+	position: relative;
+
 	flex-direction: column;
 	gap: 1rem;
 
@@ -29,7 +31,7 @@
 
 
 .card:hover {
-	transform: scale(1.1) rotate(3deg);
+	transform: scale(1.1) rotate(2deg);
 }
 
 
@@ -61,4 +63,21 @@
 
 	font: normal bold 2rem Roboto;
 	text-align: right;
+}
+
+
+
+.card::after {
+	content: "";
+	position: absolute;
+	background-color: var(--theme-cyan);
+
+	height: 1rem;
+	width: 100%;
+
+	top: calc(100% - 1rem);
+	left: 0;
+
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
 }

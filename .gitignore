@@ -1,2 +1,5 @@
 .vscode/
 js/
+
+# i restructured my local file tree to resemble how the website is laid out
+switch-banner-creator/

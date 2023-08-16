@@ -1,0 +1,69 @@
+body {
+	overflow: hidden;
+}
+
+
+
+#tool-wrapper {
+	position: absolute;
+	bottom: 3rem;
+	right: 0;
+
+}
+
+
+
+#tool-info {
+	display: grid;
+
+	grid-template-areas:
+		"info-icon made-by"
+		"info-icon last-updated";
+
+	row-gap: 1rem;
+	column-gap: 1.5rem;
+
+	border: 0.15rem solid var(--theme-black-darker);
+	background-color: var(--theme-black);
+	border-radius: 1rem;
+	box-shadow: var(--standard-box-shadow);
+
+	font-style: italic;
+	text-align: right;
+	color: var(--grayer-color);
+
+	padding: 1rem;
+
+	transform: translateX(calc(100% - 4rem));
+	transition: transform 0.8s cubic-bezier(0.8, -0.5, 0.7, 1);
+}
+
+
+
+#tool-wrapper:hover #tool-info {
+	transform: translateX(-1rem);
+	transition: transform 0.5s cubic-bezier(0.3, 0.9, 0.8, 1);
+}
+
+
+
+#info-icon {
+	grid-area: info-icon;
+
+	display: flex;
+	align-items: center;
+
+	font: normal bold 2em Roboto;
+}
+
+
+
+#made-by {
+	grid-area: made-by;
+}
+
+
+
+#last-updated {
+	grid-area: last-updated;
+}

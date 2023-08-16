@@ -24,7 +24,7 @@
 	color: var(--text-color);
 	text-decoration: none;
 
-	box-shadow: 1rem 1rem 1rem -1rem #000a;
+	box-shadow: 1rem 1rem 1rem -0.5rem #0005;
 	transition: transform 0.15s ease-in-out;
 }
 

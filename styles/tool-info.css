@@ -20,7 +20,7 @@ body {
 		"info-icon made-by"
 		"info-icon last-updated";
 
-	row-gap: 1rem;
+	row-gap: 0.5rem;
 	column-gap: 1.5rem;
 
 	border: 0.15rem solid var(--theme-black-darker);
@@ -60,6 +60,7 @@ body {
 
 #made-by {
 	grid-area: made-by;
+	margin: 0;
 }
 
 

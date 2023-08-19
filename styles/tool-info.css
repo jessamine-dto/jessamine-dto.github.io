@@ -9,6 +9,8 @@ body {
 	...and then when it fully expands it automatically closes because they're not hovering it anymore
 	instead, this can be circumvented (and i think it's generally nicer ux)
 	to have a wrapper around the tool's expanded position so that hovering anywhere in it will cause it to expand
+	padding on the bottom was originally so the box shadow didn't get cropped
+	but might as well add it to the top and call it a feature
 */
 #tool-wrapper {
 	position: absolute;
@@ -18,11 +20,7 @@ body {
 	/* don't break mobile */
 	overflow: hidden;
 
-	width: auto;
-	/* requires padding for the hide animation to work fully */
-	padding-left: 4rem;
-	/* and for the box shadow to show */
-	padding-bottom: 3rem;
+	padding: 3rem 0 3rem 4rem;
 }
 
 

@@ -4,11 +4,25 @@ body {
 
 
 
+/* the point of this wrapper is essentially that
+	whenever a user hovers over the info icon, they shouldn't hover the info icon...
+	...and then when it fully expands it automatically closes because they're not hovering it anymore
+	instead, this can be circumvented (and i think it's generally nicer ux)
+	to have a wrapper around the tool's expanded position so that hovering anywhere in it will cause it to expand
+*/
 #tool-wrapper {
 	position: absolute;
-	bottom: 3rem;
+	bottom: 0;
 	right: 0;
 
+	/* don't break mobile */
+	overflow: hidden;
+
+	width: auto;
+	/* requires padding for the hide animation to work fully */
+	padding-left: 4rem;
+	/* and for the box shadow to show */
+	padding-bottom: 3rem;
 }
 
 
@@ -34,7 +48,7 @@ body {
 
 	padding: 1rem;
 
-	transform: translateX(calc(100% - 4rem));
+	transform: translateX(calc(100% - 3.5rem));
 	transition: transform 0.8s cubic-bezier(0.8, -0.5, 0.7, 1);
 }
 
@@ -53,7 +67,7 @@ body {
 	display: flex;
 	align-items: center;
 
-	font: normal bold 2em Roboto;
+	font: normal bold 1.8em Roboto;
 }
 
 

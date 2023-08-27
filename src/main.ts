@@ -2,4 +2,8 @@ import generateLastCommitText from "./generateLastCommitText.js";
 
 
 
-await generateLastCommitText("jessamine-dto/jessamine-dto.github.io");
+const lastUpdatedSpan = document.getElementById("last-updated")!;
+
+
+
+lastUpdatedSpan.textContent = await generateLastCommitText("jessamine-dto/jessamine-dto.github.io");

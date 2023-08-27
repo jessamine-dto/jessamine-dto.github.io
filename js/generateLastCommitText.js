@@ -1,14 +1,10 @@
 async function fetchLastCommit(repository) {
     return await fetch(`https://api.github.com/repos/${repository}/commits?per_page=1`)
-        .then(res => res.ok ? res.json() : null)
-        // if the response is not ok, then this will error trying to perform null[0]
-        .then((res) => res[0])
-        // ...and be caught here
-        .catch(() => null);
+        .then(res => res.ok ? res.json() : null) // if res is not ok, return null;
+        .then((res) => res[0]) // then this will error trying to perform null[0]
+        .catch(() => null); // and be caught here
 }
-// possible philosophy improvement: export a "assignElementToLastCommit" method accepting an element and a repository
-// i like this pattern more than directly setting textContent tho
-export default async function generateLastCommitText(repository) {
+async function generateLastCommitText(repository) {
     const lastCommit = await fetchLastCommit(repository);
     if (lastCommit === null) {
         return "Unable to load version";
@@ -17,4 +13,7 @@ export default async function generateLastCommitText(repository) {
     const formattedDate = new Date(commitDate).toLocaleDateString("en-US", { dateStyle: "short" });
     const formattedHash = lastCommit.sha.slice(0, 7);
     return `Last updated ${formattedDate} (commit ${formattedHash})`;
+}
+export default async function assignLastCommitToElement(element, repository) {
+    element.textContent = await generateLastCommitText(repository);
 }
